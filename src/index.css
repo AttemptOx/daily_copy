@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+}
+
+html {
+  /* Hide scrollbar by default, but allow scrolling */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+body {
+  @apply bg-[#FDFDFD] text-black antialiased;
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  
+  /* Hide scrollbar by default, but allow scrolling */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom range slider styling */
+input[type=range] {
+  @apply h-1.5 rounded-lg cursor-pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 bg-black rounded-full border-2 border-white shadow-sm;
+}
+
+/* Markdown styling */
+.prose h1, .prose h2, .prose h3 {
+  @apply font-bold tracking-tight mt-6 mb-4;
+}
+.prose p {
+  @apply mb-4 leading-relaxed text-black/70;
+}
+.prose ul {
+  @apply list-disc pl-5 mb-4 space-y-2;
+}
